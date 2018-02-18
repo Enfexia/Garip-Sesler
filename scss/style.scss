@@ -1,0 +1,222 @@
+$dark: #222222;
+$white: #ffffff;
+$grey: #454545;
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Playfair Display', serif;
+  background: $dark;
+  color: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+h2{
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/*Buttons*/
+.btn-submit{
+  color: $grey;
+  padding: 14px 0;
+}
+
+/*Inputs*/
+input[type="email"]{
+  position: relative;
+  background: transparent;
+  height: 42px;
+  width: 450px;
+  max-width: 100%;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: $white;
+  border: 1px solid $grey;
+  border-width: 0 0 1px 0;
+  
+  &:focus{
+    outline: none;
+  }
+}
+
+::-webkit-input-placeholder { 
+  color: $white;
+}
+::-moz-placeholder { 
+  color: $white;
+}
+:-ms-input-placeholder { 
+  color: $white;
+}
+:-moz-placeholder {
+  color: $white;
+}
+
+.container{
+  width: 1170px;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.home-section{
+  padding: 120px 0;
+  width: 100%;
+  
+  .logo-section{
+    position: ralative;
+    display: block;
+    padding-bottom: 68px;
+    
+    .logo{
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      position: relative;
+      padding-bottom: 14px;
+      
+      &:after{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        bottom: 0px;
+        left: 0;
+        background-color: rgba($white, .8);
+      }
+    }
+  }
+  
+  .coming-soon{
+    padding: 68px 0 30px 0;
+    h2{
+      margin: 0;
+    }
+  }
+  
+  .contacts{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    
+    .contact{
+      display: inline-table;
+      margin-right: 40px;
+      padding: 35px 0 80px 0;
+      
+      .label{
+        color: $grey;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 16px;
+      }
+      
+      a{
+        color: $white;
+        text-decoration: none;
+        position: relative;
+        
+        &:before, &:after{
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          width: 0%;
+          height: 1px;
+          background: $white;
+          z-index: 1;
+        }        
+        &:before{
+          left: 0;
+        }
+        &:after{
+          background: $white;
+          right: 0;          
+          transition: width 0.6s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }
+        
+        &:hover:before{
+          background: $white;
+          width: 100%;
+          transition: width .6s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }
+        &:hover:after{
+          background: transparent;
+          width: 100%;
+          transition: 0s;
+        }
+      }
+      
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  
+  .form-group{
+    form{
+      .form-field{
+        position: relative;
+        width: 450px;
+        max-width: 100%;
+        
+        &:before, &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 0%;
+          height: 1px;
+          background: $white;
+          z-index: 1;
+        }        
+        &:before{
+          left: 0;
+        }
+        &:after{
+          background: $white;
+          right: 0;
+          transition: width 0.6s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }        
+        
+        .input[type="text"]{
+          padding-right: 54px;
+        }
+        .btn-submit{
+          padding: 0;
+          position: absolute;
+          right: 20px;
+          top: 0;
+          transition: all 0.27s linear;
+          transition-delay: .2s;
+          font-size: 32px;
+          
+          &:hover{
+            color: $white;
+          }
+        }
+      }
+      
+      .form-field.focused{
+        &:before{
+          background: $white;
+          width: 100%;
+          transition: width .6s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }
+        &:after{
+          background: transparent;
+          width: 100%;
+          transition: 0s;
+        }
+        
+        .btn-submit{
+          right: 14px;
+          color: $white;
+        }
+      }      
+    }
+  }
+}
